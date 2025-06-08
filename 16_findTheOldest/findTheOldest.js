@@ -8,8 +8,7 @@ const findTheOldest = function (array) {
     return array.reduce((prev, next) => {
         const prevAge = calcAge(prev.yearOfBirth, prev.yearOfDeath);
         const nextAge = calcAge(next.yearOfBirth, next.yearOfDeath);
-        if (prevAge < nextAge) return next;
-        else return prev;
+        return prevAge < nextAge ? next : prev;
     });
 };
 
